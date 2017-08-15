@@ -1,27 +1,28 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# IoT Playground
+
+This is a starter project for IoT Playground.
+
 
 ## How to use this template
+*This template does not work on its own*. The shared files for each starter are found in the Then, 
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
-
+1. Install the Ionic and Cordova
 ```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
+$ npm install -g cordova ionic
 ```
 
-Then, to run it, cd into `myBlank` and run:
+2. Download the project 
+
+3. To run it, cd into the project folder and run:
 
 ```bash
+$ npm update
+
 $ ionic cordova platform add ios
 $ ionic cordova run ios
+
+$ ionic cordova platform add android
+$ ionic cordova run android
 ```
 
-Substitute ios for android if not on a Mac.
 
-# playground
