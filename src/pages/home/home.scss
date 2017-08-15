@@ -1,3 +1,133 @@
 page-home {
+    ion-navbar {
+        opacity: 0.75;
+    }
 
+    ion-content {
+        background-image: url("../assets/background.jpg");
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+
+    ion-item {
+        background-color: rgba(whitesmoke, 0.4) !important; 
+        border: 1px solid whitesmoke !important;
+      	border-radius: 12px !important;        
+    }
+
+    ion-item ion-input {
+        font-size: 20pt;     
+        font-weight: bold;   
+    }
+
+    .device-list {
+        width:  30vw !important;
+    }
+
+    .device-info {
+        background: rgba(whitesmoke, 0.6);
+        
+        width: 28vw !important;
+        height: 28vw !important;
+
+        border: 1px solid whitesmoke;
+      	border-radius: 12px !important;
+        margin: 5px auto 5px auto;
+
+        text-align: center;
+
+    }
+
+    .device-info ion-icon  {
+        text-align: left;
+        font-size: 30px;
+
+        padding: 20px 0px 10px 0px;
+    }
+
+    .device-info .activated  {
+        color: orangered;
+    }
+
+    .device-info h4  {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .device-setting {
+        width:  60vw; 
+        height: 20vw; 
+        background: rgba(black, 0.4);
+        border: 1px solid whitesmoke !important;
+        border-radius: 12px !important;   
+        margin: 5px auto 5px auto;    
+    }
+
+    .device-setting h4 {
+        padding: 5px 0 0 10px; 
+        font-size: 10pt;     
+        font-weight: bold;  
+        color: white;
+        margin: 0px;
+    }
+
+    .device-setting ion-icon {
+        font-size: 18pt;
+        padding-right: 10px;        
+        vertical-align: middle;
+    }
+
+    .device-button {
+        width:  60vw; 
+        height: 8vw;     
+    }
+
+    .device-button button {
+        width: 29vw;
+        height: 6vw !important;    
+        margin: 0px !important;
+        padding: 0px !important;   
+        border:1px solid whitesmoke;     
+    }
+
+    .device-button ion-icon {
+        font-size: 12pt !important;
+        margin: 0px !important;
+        padding: 0px !important;   
+        color: whitesmoke;    
+    }
+
+    .device-button .danger {  
+        color: #f53d3d;    
+    }
+
+
+    .device-add {
+        background: rgba(whitesmoke, 0.2);
+        
+        width: 28vw !important;
+        height: 28vw !important;
+
+		border: 1px solid whitesmoke;
+      	border-radius: 12px !important;
+        margin: 5px auto 5px auto;
+        
+        text-align: center;
+    }
+
+    .device-add ion-icon  {
+        margin: 0px;
+        
+        padding: 20px 0px 5px 0px;        
+        font-size: 38px;
+        color: whitesmoke;   
+    }
+
+	.device-add h4  {
+        margin: 0px;
+        text-align: center;
+	    font-size: 13px;
+        color: whitesmoke;         
+    }
 }
+

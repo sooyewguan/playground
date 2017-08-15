@@ -1,14 +1,57 @@
 <ion-header>
-  <ion-navbar>
+  <!-- <ion-navbar color="{{mqtt_connected ? 'light' : 'dark' }}" > -->
+  <ion-navbar color="dark">  
     <ion-title>
-      Ionic Blank
+      IoT Playground
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div *ngIf="!mqtt_connected">
+    <ion-item>
+      <ion-label floating>Host</ion-label>
+      <ion-input text-center placeholder="127.0.0.1" [(ngModel)]="mqtt_host"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-label floating>Port</ion-label>
+      <ion-input text-center placeholder="1883" [(ngModel)]="mqtt_port"></ion-input>
+    </ion-item>
+    <br>
+    <button ion-button block (click)="connect()">Connect</button>
+  </div>
+  <div *ngIf="mqtt_connected">
+    <ion-row *ngFor="let device of devices">
+      <div class="device-list" tappable (click)="pub(device)">
+        <div class="device-info">
+          <ion-icon name={{device.icon}} [class.activated]="device.status == '1'"></ion-icon> 
+          <div>
+            <h4 *ngIf="device.type == 'input' || device.type == 'output'" [class.activated]="device.status == '1'">{{device.status == '1' ? 'ON' : 'OFF'}}</h4>
+            <h4 *ngIf="device.type == 'sensor'">{{device.status}}</h4>
+          </div>     
+        </div>
+      </div>
+      <div>
+        <div class="device-setting">
+          <h4><ion-icon name="ios-arrow-dropright"></ion-icon>{{device.sub_topic}}</h4>       
+          <h4><ion-icon name="ios-arrow-dropleft-circle"></ion-icon>{{device.pub_topic}}</h4>       
+        </div>
+
+        <div class="device-button">
+          <button ion-button icon-only (click)="edit_sub(device._id)"><ion-icon name=md-cog></ion-icon></button> 
+          <button ion-button color="danger" icon-only (click)="edit_pub(device._id)"><ion-icon name=md-cog></ion-icon></button> 
+        </div>
+      </div>
+    </ion-row>
+
+    <!-- <ion-row *ngIf="devices?.length < 9">
+      <div class="device-list" tappable (click)="addDevice()">
+        <div class="device-add">
+          <ion-icon name="md-add"></ion-icon>
+          <h4>New Device</h4>
+        </div>
+      </div>
+    </ion-row> -->
+  </div> <!-- connected -->
 </ion-content>
