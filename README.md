@@ -16,7 +16,7 @@ $ npm install -g cordova ionic
 3. To run it, cd into the project folder and run:
 
 ```bash
-$ npm update
+$ npm install
 
 $ ionic cordova platform add ios
 $ ionic cordova run ios

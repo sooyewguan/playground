@@ -69,7 +69,7 @@ export class HomePage {
               } else {
                 if(data) {
                   console.log(data);
-                  this.mqtt_client.publish(d['pub_topic'], data.message);
+                  this.mqtt_client.publish(d['pub_topic'], data);
                 } else {
                   console.log('invalid data');
                   return false;
